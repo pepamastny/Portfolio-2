@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 800px;
+    width: 96%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+a:hover {
+    opacity: 0.7;
+    transition: opacity all 300ms ease;
+}
+
+.link__hover-efect::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: yellow;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-efect:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* NAVIGATION */
+
+.nav {
+    padding: 20px 0;
+    background-color: #242424;
+}
+
+
+.nav-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__navigation {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav__logo--img {
+    width: 100%;
+    max-width: 35px;
+}
+
+.nav__navigation--list {
+    color: #fff;
+    padding: 5px 10px;
+    opacity: 50%;
+    transition: all 200ms ease;
+    font-weight: 700;
+}
+
+.nav__navigation--list:hover {
+    color: yellow;
+    border-radius: 10px;
+    opacity: 100%;
+    box-shadow: 0 0 5px;
+    font-weight: 700;
+}
+
+
+/* ABOUT ME */
+
+.about {
+    background-color: grey;
+}
+
+.about-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.about__image--picture {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 15px;
+    animation: animate-profile-picture 900ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.about__text {
+    text-align: center;
+}
+
+.about__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-shadow: 5px 5px 8px;
+    animation: fade-up 650ms 400ms backwards;
+}
+
+.about__title--wave {
+    width: 100%;
+    font-size: 36px;
+    display: inline-block;
+    animation: animate_wave 500ms infinite ease;
+}
+
+@keyframes animate_wave {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.about__subtitle{
+    width: 100%;
+    max-width: 600px;
+    font-size: 18px;
+    color: #fff;
+    animation: fade-up 650ms 600ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LANGUAGES */
+
+.languages {
+    background-color: #242424;
+}
+
+.languages-block {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.languages__title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.languages__images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.language__images--wrapper {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    padding: 25px 16px;
+    position: relative;
+}
+
+.languages__images--picture {
+    max-width: 100px;
+    width: 100%;
+    transition: all 300ms;
+}
+
+.language__images--wrapper:hover .languages__images--picture {
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+}
+
+.languages_images--name {
+    color: yellow;
+    text-shadow: 0 0 5px;
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms;
+}
+
+.language__images--wrapper:hover .languages_images--name {
+    transform: scale(1);
+}
+
+/* PROJECTS */
+
+#projects {
+    background-color: grey;
+    padding-bottom: 40px;
+}
+
+.project {
+    margin-bottom: 135px;
+    list-style: none;
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.projects__title {
+    text-align: center;
+    padding-top: 50px;
+    text-shadow: 5px 5px 8px;
+}
+
+.project__img {
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.project__wrapper {
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.project__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+.project:hover .project__wrapper::before {
+    opacity: 0.7;
+}
+
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.project:hover .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.projects__list {
+    padding-top: 40px;
+}
+
+.project__description {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+
+.project__description--title {
+    font-size: 36px;
+}
+
+.project__description--para {
+    margin: 16px 0;
+}
+
+.project__description--link {
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.project__description--title,
+.project__description--subtitle,
+.project__description--para,
+.project__description--links {
+    text-align: left;
+    color: #fff;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #242424;
+}
+
+.footer__social--list {
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4% 0;
+}
+
+.footer__logo--img {
+    width: 70px;
+    height: 70px;
+}
+
+.footer__social--link,
+.footer__copyright {
+    color: yellow;
+    text-shadow: 0 0 5px;
+}
+
+.footer__logo--popper {
+    color: yellow;
+    text-shadow: 0 0 5px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer__anchor {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+    transform: translateX(40px);
+    opacity: 1;
+}
